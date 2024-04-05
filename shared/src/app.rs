@@ -1,4 +1,4 @@
-use crux_core::{render::Render, App};
+use crux_core::{compose::Compose, render::Render, App};
 use serde::{Deserialize, Serialize};
 
 #[derive(Serialize, Deserialize, Clone, Debug)]
@@ -23,6 +23,7 @@ pub struct ViewModel {
 #[effect(app = "Composer")]
 pub struct Capabilities {
     render: Render<Event>,
+    compose: Compose<Event>,
 }
 
 #[derive(Default)]
